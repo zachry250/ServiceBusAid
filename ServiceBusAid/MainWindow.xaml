@@ -1,0 +1,43 @@
+﻿<Window x:Class="ServiceBusAid.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ServiceBusAid"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="800">
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center">Send</TextBlock>
+        <Grid Grid.Row="1" Grid.Column="0" Margin="0,5,2,5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Margin="0,0,5,0">Connection:</TextBlock>
+            <TextBox x:Name="SendConnection" Grid.Column="1" MaxLines="1"></TextBox>
+        </Grid>
+        <TextBox x:Name="SendMessage" Grid.Row="2" Grid.Column="0" Margin="0,0,2,0"></TextBox>
+        <Button x:Name="SendButton" Grid.Row="3" Grid.Column="0" Margin="0,0,2,0" Click="SendButton_Click">Send</Button>
+        <TextBlock Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center">Receive</TextBlock>
+        <Grid Grid.Row="1" Grid.Column="1" Margin="2,5,0,5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Margin="0,0,5,0">Connection:</TextBlock>
+            <TextBox x:Name="ReceiveConnection" Grid.Column="1" MaxLines="1"></TextBox>
+        </Grid>
+        <TextBox x:Name="ReceiveMessage" Grid.Row="2" Grid.Column="1" Margin="2,0,0,0"></TextBox>
+        <ToggleButton x:Name="ReceiveButton" Grid.Row="3" Grid.Column="1" Margin="2,0,0,0" Checked="ReceiveButton_Checked" Unchecked="ReceiveButton_Unchecked">Receive</ToggleButton>
+    </Grid>
+</Window>
